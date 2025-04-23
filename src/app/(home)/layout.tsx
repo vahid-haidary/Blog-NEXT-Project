@@ -1,8 +1,7 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import '../styles/globals.css';
 import HeaderComponent from '../components/HeaderComponent';
-import LoadingPage from '../components/Loading';
 
 export const metadata = {
     title: 'Next Blog',

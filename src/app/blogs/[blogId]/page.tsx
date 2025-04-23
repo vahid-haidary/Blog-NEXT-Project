@@ -25,10 +25,10 @@ function BlogId({params}:IParamsId) {
   })
 
   return (
-    <div className='w-1/2 mx-auto mt-10 select-none'>
+    <div className='w-1/2 max-sm:w-full max-sm:px-11 max-sm:mt-40 max-sm:mb-20 mx-auto mt-10 select-none'>
      <div className='flex flex-col items-center'>     
       <img loading='lazy' src={data?.data.image} alt={data?.data.id} className='shadow-2xs rounded-2xl w-[700px] h-[300px]' />
-      <h1 className='text-4xl font-bold mt-5 text-blue-500'>
+      <h1 className='text-4xl max-sm:text-2xl font-bold mt-5 text-blue-500'>
      {data?.data.title}
       </h1>
       <p className='mt-8'>

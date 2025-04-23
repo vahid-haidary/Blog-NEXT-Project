@@ -10,8 +10,7 @@ function HeaderComponent() {
         <Image
         src='/banner/banner.jpg'
         alt='Banner'
-        width={1920}
-        height={1080}
+        fill
         className='object-cover relative max-h-[500px]'
         />
         {/* overLay */}
@@ -22,7 +21,7 @@ function HeaderComponent() {
         </div>
         {/* Navigation */}
         <nav className='
-         w-1/4 mx-auto absolute left-0 right-0 top-10 flex justify-around 
+         w-1/4 max-sm:w-full max-sm:gap-6 mx-auto absolute left-0 right-0 top-10 flex justify-around 
           text-white font-semibold text-lg *:cursor-pointer
           *:hover:underline *:decoration-amber-300 *:decoration-2
           *:inline-block

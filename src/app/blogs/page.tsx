@@ -34,11 +34,11 @@ function BlogPage() {
   }
 
   return (
-    <div className='flex flex-col items-center gap-20 mt-20 px-30 divide-solid divide-y-2 divide-gray-200 mb-10 select-none'>
+    <div className='flex flex-col items-center gap-20 mt-20 max-sm:px-10 max-sm:mt-40 px-30 divide-solid divide-y-2 divide-gray-200 mb-10 select-none'>
       {data && data.map((post:IPOst,index: number) => {
         const isRightToLeft = index % 2 === 0
             return (
-              <div key={post.id} className={`flex  items-center gap-10 mx-auto pb-6 ${isRightToLeft ? 'flex-row ' :'flex-row-reverse '}`}>
+              <div key={post.id} className={`flex max-sm:flex-col items-center gap-10 mx-auto pb-6 ${isRightToLeft ? 'sm:flex-row ' :'sm:flex-row-reverse '}`}>
               <Image
               src={post.image}
               alt={post.title}
@@ -46,8 +46,8 @@ function BlogPage() {
               height={300}
               className='rounded-2xl shadow-2xl'
              />
-             <div className={`flex flex-col text-gray-400 ${isRightToLeft? "text-start items-start" : "text-end items-end"}`}>
-                <h1 onClick={() => getIdClick(post.id)} className='text-3xl font-bold text-blue-500 mb-2 tracking-widest cursor-pointer'>{post.slug}</h1>
+             <div className={`flex flex-col text-gray-400 ${isRightToLeft? "text-start items-start" : "sm:text-end sm:items-end"}`}>
+                <h1 onClick={() => getIdClick(post.id)} className='text-3xl max-sm:text-2xl font-bold text-blue-500 mb-2 tracking-widest cursor-pointer'>{post.slug}</h1>
                 <div className='flex gap-3 items-center mb-1'>
                   <span className='text-yellow-500 font-semibold'>{post.author}</span>
                   <span>|</span>
