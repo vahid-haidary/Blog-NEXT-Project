@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { Suspense } from 'react'
+import LoadingPage from './Loading'
 
 function HeaderComponent() {
   return (
+    <Suspense fallback={<LoadingPage/>} >
     <div className='relative w-full h-[500px] select-none'>
         <Image
         src='/banner/banner.jpg'
@@ -37,6 +39,7 @@ function HeaderComponent() {
             <button className='!bg-transparent border border-white hover:!bg-amber-600'>LearnMore</button>
         </div>
     </div>
+    </Suspense>
   )
 }
 

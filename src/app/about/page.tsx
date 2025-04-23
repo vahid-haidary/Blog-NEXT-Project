@@ -4,12 +4,12 @@ import React from 'react'
 function AboutPage() {
   return (
     <div>
-        <div className='relative'>
+        <div className='relative flex w-full h-lvh '>
             <Image
             src='/banner/about-us.jpg'
-            width={1920}
-            height={1080}
+            fill
             alt='About us'
+            className='object-cover'
             />
         </div>
 

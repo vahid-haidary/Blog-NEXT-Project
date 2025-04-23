@@ -2,6 +2,7 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const fetchPosts = async () => {
@@ -24,7 +25,14 @@ function BlogPage() {
     queryFn: fetchPosts,
     queryKey: ['posts']
   })
-  console.log(data);
+
+  const router = useRouter()
+
+
+  const getIdClick = (id:string) => {
+    router.push(`/blogs/${id}`)
+  }
+
   return (
     <div className='flex flex-col items-center gap-20 mt-20 px-30 divide-solid divide-y-2 divide-gray-200 mb-10 select-none'>
       {data && data.map((post:IPOst,index: number) => {
@@ -36,10 +44,10 @@ function BlogPage() {
               alt={post.title}
               width={300}
               height={300}
-              className='rounded-2xl shadow-2xl cursor-pointer'
+              className='rounded-2xl shadow-2xl'
              />
              <div className={`flex flex-col text-gray-400 ${isRightToLeft? "text-start items-start" : "text-end items-end"}`}>
-                <h1 className='text-3xl font-bold text-blue-500 mb-2 tracking-widest'>{post.slug}</h1>
+                <h1 onClick={() => getIdClick(post.id)} className='text-3xl font-bold text-blue-500 mb-2 tracking-widest cursor-pointer'>{post.slug}</h1>
                 <div className='flex gap-3 items-center mb-1'>
                   <span className='text-yellow-500 font-semibold'>{post.author}</span>
                   <span>|</span>
@@ -50,7 +58,7 @@ function BlogPage() {
                 </p>
              </div>
             </div>
-            )
+          )
       }
       )}
     </div>

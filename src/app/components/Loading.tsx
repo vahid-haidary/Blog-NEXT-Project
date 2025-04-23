@@ -1,12 +1,12 @@
 import React from 'react'
 import { BeatLoader } from 'react-spinners'
 
-function HomeLoading() {
+function LoadingPage() {
   return (
     <div>
-        <BeatLoader/>
+        <BeatLoader size={30} color='#ffb900'/>
     </div>
   )
 }
 
-export default HomeLoading
+export default LoadingPage
