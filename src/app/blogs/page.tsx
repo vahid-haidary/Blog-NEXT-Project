@@ -4,6 +4,7 @@ import axios from 'axios'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import LoadingPage from '../components/Loading'
 
 const fetchPosts = async () => {
   const res = await axios.get('/api')
@@ -21,7 +22,7 @@ interface IPOst {
 }
 
 function BlogPage() {
-  const {data} = useQuery({
+  const {data,isLoading} = useQuery({
     queryFn: fetchPosts,
     queryKey: ['posts']
   })
@@ -32,6 +33,8 @@ function BlogPage() {
   const getIdClick = (id:string) => {
     router.push(`/blogs/${id}`)
   }
+
+  if(isLoading) return <div className='w-full h-lvh text-center flex justify-center items-center' ><LoadingPage/></div>
 
   return (
     <div className='flex flex-col items-center gap-20 mt-20 max-sm:px-10 max-sm:mt-40 px-30 divide-solid divide-y-2 divide-gray-200 mb-10 select-none'>

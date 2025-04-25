@@ -4,7 +4,10 @@ import '../styles/globals.css';
 import HeaderComponent from '../components/HeaderComponent';
 
 export const metadata = {
-    title: 'Next Blog',
+    title: {
+        default: 'Next-Blog-App',
+        template: 'Nxt-Blog | %s'
+    },
     description: 'A simple blog built with Next.js',
 };
 

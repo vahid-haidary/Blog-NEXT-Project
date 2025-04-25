@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 
+export const metadata = {
+    title: 'BlogList',
+    description: 'A simple blog built with Next.js',
+};
+
 export default function BlogsLayout({
     children,
 }: {
