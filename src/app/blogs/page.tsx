@@ -22,7 +22,7 @@ interface IPOst {
 }
 
 function BlogPage() {
-  const {data,isLoading} = useQuery({
+  const {data,isLoading,isError} = useQuery({
     queryFn: fetchPosts,
     queryKey: ['posts']
   })
@@ -35,6 +35,7 @@ function BlogPage() {
   }
 
   if(isLoading) return <div className='w-full h-lvh text-center flex justify-center items-center' ><LoadingPage/></div>
+  if(isError) return <Image src='/banner/503.png' alt='image' />
 
   return (
     <div className='flex flex-col items-center gap-20 mt-20 max-sm:px-10 max-sm:mt-40 px-30 divide-solid divide-y-2 divide-gray-200 mb-10 select-none'>
