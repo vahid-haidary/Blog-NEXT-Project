@@ -33,7 +33,7 @@ function BlogId({params}:IParamsId) {
     <div className='w-1/2 max-sm:w-full max-sm:px-11 max-sm:mt-40 max-sm:mb-20 mx-auto mt-10 select-none'>
      <div className='flex flex-col items-center'> 
       {!imageloading && (
-         <div className='w-[700px] h-[300px] bg-gray-300 rounded-2xl flex text-center justify-center items-center'> <LoadingPage/> </div>
+         <div className='w-[700px] h-[300px] absolute bg-gray-300 rounded-2xl flex text-center justify-center items-center'> <LoadingPage/> </div>
       )}    
       <img 
       loading='lazy'
